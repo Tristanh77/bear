@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Country Bear Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ bear.name }}</span>
+    <p>Breed: {{ bear.breed }}</p>
+    <p>Description: {{ bear.description }}</p>
+    {% if bear.age > 0 %}
+      <p>Age: {{ bear.age }}</p>
+    {% else %}
+      <p>Age: Cub</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

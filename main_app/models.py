@@ -8,5 +8,7 @@ class Bear(models.Model):
 	age = models.IntegerField()
 # Create your models here.
 
-def get_absolute_url(self):
-		return reverse('detail', kwargs={'bear_id': self.id})
+	def get_absolute_url(self):
+		# return reverse('bears_detail', kwargs={'bear_id': self.id})
+		# return reverse('bears_detail', kwargs={'bear_id': self.object.id})
+		return reverse('bears_details', kwargs={'bear_id': self.id})

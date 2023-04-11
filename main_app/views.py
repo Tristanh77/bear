@@ -1,10 +1,24 @@
 from django.shortcuts import render
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # Add the following import
 from django.http import HttpResponse
 
 from .models import Bear
 
+
+class BearCreate(CreateView):
+	model = Bear
+	fields = '__all__' 
+	success_url = '/index/'
+
+class BearUpdate(UpdateView):
+	model = Bear
+	fields = '__all__'
+	success_url = '/index/'
+
+class BearDelete(DeleteView):
+	model = Bear
+	success_url = '/index/'
 
 # Define the home view
 def home(request):

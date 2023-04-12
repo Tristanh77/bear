@@ -9,12 +9,13 @@ from .models import Bear
 class BearCreate(CreateView):
 	model = Bear
 	fields = '__all__' 
+	template_name = 'main_app/bear_form.html'
+
 	def get_success_url(self):	
-		bear_nr = self.get_object().item_bear
-		bear = Bear.objects.get(name=bear_nr)
+		bear_id = self.object.id
+		bear = Bear.objects.get(id=bear_id)
 		bear_id = bear.id	
-		return reverse_lazy("bears_detail", kwargs={"bear_id": bear_id}) 
-	
+		return reverse_lazy("bear_details", kwargs={"bear_id": bear_id})
 
 
 class BearUpdate(UpdateView):

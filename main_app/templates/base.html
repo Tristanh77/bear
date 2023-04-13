@@ -8,6 +8,7 @@
   <title>Country Bears</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
   <header class="navbar-fixed">
@@ -20,6 +21,8 @@
         <ul class="right">
           <li><a href="/about">About</a></li>
           <li><a href="{% url 'bears_create' %}">Add A Country Bear</a></li>
+          <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+					<li><a href="{% url 'toys_index' %}">View All Toys</a></li>
           <li><a href="/bears">View All Bears</a></li>
         </ul>
       </div>
@@ -30,7 +33,7 @@
     {% endblock %}
   </main>
   <footer class="page-footer">
-    <div class="right">All Rights Reserved, &copy; 2019 Cat Collector &nbsp;</div>
+    <div class="right">All Rights Reserved, &copy; 2023 Bears &nbsp;</div>
   </footer>
 </body>
 </html>
